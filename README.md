@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+JSON API for managing TODOs in Rails/Ruby
 
-Things you may want to cover:
+Functional Requirements:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- API allows to create/update/delete projects
+- API allows to add tasks to my project
+- API allows to update/delete tasks
+- API allows to prioritise tasks within a project (statuses: minor, major, critical)
+- API allows to mark a task as 'done'
+- API allows to list projects
+- API allows to list tasks in project

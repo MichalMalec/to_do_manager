@@ -2,7 +2,6 @@ class V1::TasksController < ApplicationController
   before_action :ensure_signed_in
   
   def index
-    # byebug
     @tasks = current_user.tasks
     render json: @tasks, each_serializer: TaskSerializer, status: :ok
   end
@@ -20,7 +19,7 @@ class V1::TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.new(task_params)
+    @task = current_user.tasks.build(task_params)
 
     @task.save
     render json: @task, each_serializer: TaskSerializer, status: :created
@@ -55,7 +54,7 @@ class V1::TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :priority, :is_done)
+    params.require(:task).permit(:name, :priority, :is_done).merge(project_id: params[:project_id])
   end
 
   def ensure_signed_in
