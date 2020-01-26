@@ -10,17 +10,19 @@ resource "Projects" do
   
   get "/v1/projects" do
     example "GET projects endpoint" do
+      create_project
       do_request
       parsed_response = JSON.parse(response_body)
 
       expect(status).to eq 200
       expect(parsed_response).to have_key("projects")
+      expect(parsed_response["projects"][0].keys).to contain_exactly("id", "name")
     end
   end
 
   get "/v1/projects/:id" do
     context "200" do
-      let(:id) { id_of_created_project }
+      let(:id) { create_project.id }
 
       example "GET project endpoint with specific id" do
         do_request
@@ -62,7 +64,7 @@ resource "Projects" do
 
   put "/v1/projects/:id" do
     context "201" do
-      let(:id) { id_of_created_project }
+      let(:id) { create_project.id }
 
       example "PUT project endpoint with specific id" do
         request_body = { 
@@ -97,7 +99,7 @@ resource "Projects" do
 
   delete "/v1/projects/:id" do
     context "200" do
-      let(:id) { id_of_created_project }
+      let(:id) { create_project.id }
 
       example "DELETE project endpoint with specific id" do
         do_request
@@ -115,15 +117,13 @@ resource "Projects" do
         parsed_response = JSON.parse(response_body)
         expect(status).to eq 404
         expect(parsed_response).to have_key("error")
-        byebug
       end
     end
   end
 
   private 
 
-  def id_of_created_project
-    project = Project.create!(user_id: 1, name: "TEST")
-    project_id = project.id
+  def create_project
+    project = Project.create!(user_id: 1, name: "Test project")
   end
 end

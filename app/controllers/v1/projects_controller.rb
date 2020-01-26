@@ -43,7 +43,7 @@ class V1::ProjectsController < ApplicationController
     
     if @project
       @project.destroy
-      render json: { status: 'Success', message: 'Project was removed'}
+      render json: { status: 'Success', message: 'Project was removed' }
     else
       render json: {
         error: "Project with id #{params[:id]} not found."

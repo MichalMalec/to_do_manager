@@ -43,7 +43,7 @@ class V1::TasksController < ApplicationController
 
     if @task
       @task.destroy
-      render json: { message: 'Task was succesfully removed' }
+      render json: { status: 'Success', message: 'Task was removed' }
     else
       render json: {
         error: "Task with id #{params[:id]} not found."
