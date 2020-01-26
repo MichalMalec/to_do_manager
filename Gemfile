@@ -32,6 +32,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 # tests
 gem 'rspec_api_documentation'
+gem 'raddocs'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
