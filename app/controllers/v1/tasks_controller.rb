@@ -1,16 +1,16 @@
 class V1::TasksController < ApplicationController
-  before_action :ensure_signed_in
+  before_action :ensure_signed_in, :ensure_existing_project
   
   def index
-    @tasks = project.tasks
-    render json: @tasks
+    tasks = project.tasks
+    render json: tasks
   end
 
   def show
-    @task = project.tasks.where(id: params[:id]).first
+    task = project.tasks.where(id: params[:id]).first
       
-    if @task
-      render json: @task
+    if task
+      render json: task
     else
       render json: {
         error: "Task with id #{params[:id]} not found."
@@ -19,18 +19,18 @@ class V1::TasksController < ApplicationController
   end
 
   def create
-    @task = project.tasks.build(task_params)
+    task = project.tasks.build(task_params)
 
-    @task.save
-    render json: @task, status: :created
+    task.save
+    render json: task, status: :created
   end
 
   def update
-    @task = project.tasks.where(id: params[:id]).first
+    task = project.tasks.where(id: params[:id]).first
 
-    if @task
-      @task.update(task_params)
-      render json: @task, status: :created
+    if task
+      task.update(task_params)
+      render json: task, status: :created
     else
       render json: {
         error: "Task with id #{params[:id]} not found."
@@ -39,10 +39,10 @@ class V1::TasksController < ApplicationController
   end
 
   def destroy
-    @task = project.tasks.where(id: params[:id]).first
+    task = project.tasks.where(id: params[:id]).first
 
-    if @task
-      @task.destroy
+    if task
+      task.destroy
       render json: { status: 'Success', message: 'Task was removed' }
     else
       render json: {
@@ -65,5 +65,13 @@ class V1::TasksController < ApplicationController
 
   def project
     current_user.projects.find(params[:project_id])
+  end
+
+  def ensure_existing_project
+    if current_user.projects.where(id: params[:project_id]).first.nil?
+      render json: {
+        error: "Project with id #{params[:project_id]} not found."
+      }, status: :not_found
+    end
   end
 end

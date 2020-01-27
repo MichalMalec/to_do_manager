@@ -2,15 +2,15 @@ class V1::ProjectsController < ApplicationController
   before_action :ensure_signed_in
   
   def index
-    @projects = current_user.projects
-    render json: @projects
+    projects = current_user.projects
+    render json: projects
   end
 
   def show
-    @project = current_user.projects.where(id: params[:id]).first
+    project = current_user.projects.where(id: params[:id]).first
     
-    if @project
-      render json: @project
+    if project
+      render json: project
     else
       render json: {
         error: "Project with id #{params[:id]} not found."
@@ -19,18 +19,18 @@ class V1::ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.projects.build(project_params)
+    project = current_user.projects.build(project_params)
 
-    @project.save
-    render json: @project, status: :created
+    project.save
+    render json: project, status: :created
   end
 
   def update
-    @project = current_user.projects.where(id: params[:id]).first
+    project = current_user.projects.where(id: params[:id]).first
     
-    if @project
-      @project.update(project_params)
-      render json: @project, status: :created
+    if project
+      project.update(project_params)
+      render json: project, status: :created
     else
       render json: {
         error: "Project with id #{params[:id]} not found."
@@ -39,10 +39,10 @@ class V1::ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = current_user.projects.where(id: params[:id]).first
+    project = current_user.projects.where(id: params[:id]).first
     
-    if @project
-      @project.destroy
+    if project
+      project.destroy
       render json: { status: 'Success', message: 'Project was removed' }
     else
       render json: {
