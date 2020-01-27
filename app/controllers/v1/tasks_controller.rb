@@ -2,15 +2,15 @@ class V1::TasksController < ApplicationController
   before_action :ensure_signed_in
   
   def index
-    @tasks = current_user.tasks
-    render json: @tasks, each_serializer: TaskSerializer, status: :ok
+    @tasks = project.tasks
+    render json: @tasks
   end
 
   def show
-    @task = current_user.tasks.where(id: params[:id]).first
+    @task = project.tasks.where(id: params[:id]).first
       
     if @task
-      render json: @task, each_serializer: TaskSerializer, status: :ok
+      render json: @task
     else
       render json: {
         error: "Task with id #{params[:id]} not found."
@@ -19,18 +19,18 @@ class V1::TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.build(task_params)
+    @task = project.tasks.build(task_params)
 
     @task.save
-    render json: @task, each_serializer: TaskSerializer, status: :created
+    render json: @task, status: :created
   end
 
   def update
-    @task = current_user.tasks.where(id: params[:id]).first
+    @task = project.tasks.where(id: params[:id]).first
 
     if @task
       @task.update(task_params)
-      render json: @task, each_serializer: TaskSerializer, status: :created
+      render json: @task, status: :created
     else
       render json: {
         error: "Task with id #{params[:id]} not found."
@@ -39,7 +39,7 @@ class V1::TasksController < ApplicationController
   end
 
   def destroy
-    @task = current_user.tasks.where(id: params[:id]).first
+    @task = project.tasks.where(id: params[:id]).first
 
     if @task
       @task.destroy
@@ -61,5 +61,9 @@ class V1::TasksController < ApplicationController
     if current_user.nil?
       head(:unauthorized)
     end
+  end
+
+  def project
+    current_user.projects.find(params[:project_id])
   end
 end
