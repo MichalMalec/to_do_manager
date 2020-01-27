@@ -3,14 +3,14 @@ class V1::ProjectsController < ApplicationController
   
   def index
     @projects = current_user.projects
-    render json: @projects, each_serializer: ProjectSerializer, status: :ok
+    render json: @projects
   end
 
   def show
     @project = current_user.projects.where(id: params[:id]).first
     
     if @project
-      render json: @project, each_serializer: ProjectSerializer, status: :ok
+      render json: @project
     else
       render json: {
         error: "Project with id #{params[:id]} not found."
@@ -22,7 +22,7 @@ class V1::ProjectsController < ApplicationController
     @project = current_user.projects.build(project_params)
 
     @project.save
-    render json: @project, each_serializer: ProjectSerializer, status: :created
+    render json: @project, status: :created
   end
 
   def update
@@ -30,7 +30,7 @@ class V1::ProjectsController < ApplicationController
     
     if @project
       @project.update(project_params)
-      render json: @project, each_serializer: ProjectSerializer, status: :created
+      render json: @project, status: :created
     else
       render json: {
         error: "Project with id #{params[:id]} not found."
