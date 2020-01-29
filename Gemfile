@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'pundit'
 
 # tests
 gem 'rspec_api_documentation'
