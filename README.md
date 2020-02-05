@@ -37,7 +37,7 @@ https://thawing-coast-88544.herokuapp.com/
 
 ## POST /v1/sessions
   **When to use?**
-  - authorize user to be able to use app
+  - authenticate user to be able to use app
   - be possible to look over user's projects/tasks
 
   **Exemplary request payload**
@@ -60,7 +60,7 @@ https://thawing-coast-88544.herokuapp.com/
 
 ## DELETE /v1/sessions
   **When to use?**
-  - unauthorize user to not be able to use the app
+  - deauthenticate user to not be able to use the app
 
 ## GET /v1/projects
   **When to use?**
