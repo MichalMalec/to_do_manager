@@ -20,7 +20,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - create new user
 
-  **Exemplary request payload**
+  **Exemplary request payload:**
   ```javascript
   {
 	"user": {
@@ -40,7 +40,7 @@ https://thawing-coast-88544.herokuapp.com/
   - authenticate user to be able to use app
   - be possible to look over user's projects/tasks
 
-  **Exemplary request payload**
+  **Exemplary request payload:**
   ```javascript
   {
 	  "email": "email@example.com",
@@ -48,7 +48,7 @@ https://thawing-coast-88544.herokuapp.com/
   }
   ```
 
-  **Exemplary response payload with auth data**
+  **Exemplary response payload with auth data:**
   ```javascript
   {
       "user": {
@@ -86,7 +86,7 @@ https://thawing-coast-88544.herokuapp.com/
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
-  **Exemplary request payload**
+  **Exemplary request payload:**
   ```javascript
   {
 	  "name": "POST project"
@@ -101,7 +101,7 @@ https://thawing-coast-88544.herokuapp.com/
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
-  **Exemplary request payload**
+  **Exemplary request payload:**
   ```javascript
   {
 	  "name": "PUT project"
@@ -140,7 +140,7 @@ https://thawing-coast-88544.herokuapp.com/
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
-  **Exemplary request payload**
+  **Exemplary request payload:**
   ```javascript
   {
     "name": "Task przykładowy",
@@ -157,7 +157,7 @@ https://thawing-coast-88544.herokuapp.com/
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
-  **Exemplary request payload**
+  **Exemplary request payload:**
   ```javascript
   {
 	  "name": "PUT task",
