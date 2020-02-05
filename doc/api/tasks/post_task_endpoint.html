@@ -124,7 +124,7 @@ Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /v1/projects/128/tasks</pre>
+          <pre class="request route highlight">POST /v1/projects/1629/tasks</pre>
 
 
             <h4>Body</h4>
@@ -140,15 +140,22 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;aa552aa3e1e3556d12117b071cd0fa88&quot;
+ETag: W/&quot;93572d10d468593a31b377dd5c627b04&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b6d67941-e4d6-4166-a759-bc91a638c892
-X-Runtime: 0.026200
-Content-Length: 66</pre>
+X-Request-Id: 1418e83f-92ea-40c3-ba98-687e60455c35
+X-Runtime: 0.034223
+Content-Length: 67</pre>
             <h4>Status</h4>
             <pre class="response status">201 Created</pre>
               <h4>Body</h4>
-              <pre class="response body">[binary data]</pre>
+              <pre class="response body">{
+  &quot;task&quot;: {
+    &quot;id&quot;: 590,
+    &quot;name&quot;: &quot;POST task&quot;,
+    &quot;priority&quot;: 1,
+    &quot;is_done&quot;: false
+  }
+}</pre>
       </div>
     </div>
   </body>

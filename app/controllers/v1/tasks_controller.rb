@@ -61,7 +61,7 @@ class V1::TasksController < ApplicationController
   def ensure_existing_task
     if project.tasks.where(id: params[:id]).first.nil?
       render json: {
-        error: "Task with id #{params[:id]} not found."
+        error: "Task with id \'#{params[:id]}\' not found."
       }, status: :not_found
     end
   end

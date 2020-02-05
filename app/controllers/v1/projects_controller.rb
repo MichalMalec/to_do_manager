@@ -49,7 +49,7 @@ class V1::ProjectsController < ApplicationController
   def ensure_existing_project
     if current_user.projects.where(id: params[:id]).first.nil?
       render json: {
-        error: "Project with id #{params[:id]} not found."
+        error: "Project with id \'#{params[:id]}\' not found."
       }, status: :not_found
     end
   end

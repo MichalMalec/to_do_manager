@@ -123,7 +123,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /v1/projects/127/tasks/x</pre>
+          <pre class="request route highlight">GET /v1/projects/1628/tasks/x</pre>
 
 
 
@@ -138,13 +138,15 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
 Cache-Control: no-cache
-X-Request-Id: cb548a18-8b76-494e-8bc9-f1303f3f2276
-X-Runtime: 0.013069
-Content-Length: 37</pre>
+X-Request-Id: 4926fabb-db0d-4258-b1b1-a6310c5bb3a4
+X-Runtime: 0.014943
+Content-Length: 39</pre>
             <h4>Status</h4>
             <pre class="response status">404 Not Found</pre>
               <h4>Body</h4>
-              <pre class="response body">[binary data]</pre>
+              <pre class="response body">{
+  &quot;error&quot;: &quot;Task with id &#39;x&#39; not found.&quot;
+}</pre>
       </div>
     </div>
   </body>

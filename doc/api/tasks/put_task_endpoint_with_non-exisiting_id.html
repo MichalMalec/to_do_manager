@@ -124,7 +124,7 @@ Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PUT /v1/projects/130/tasks/x</pre>
+          <pre class="request route highlight">PUT /v1/projects/1631/tasks/x</pre>
 
 
             <h4>Body</h4>
@@ -141,13 +141,15 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
 Cache-Control: no-cache
-X-Request-Id: 7d39d19e-7dab-4e57-9701-75852314eaf9
-X-Runtime: 0.008817
-Content-Length: 37</pre>
+X-Request-Id: bdc448c6-0d7b-4651-9f7b-67ff65c7915e
+X-Runtime: 0.019369
+Content-Length: 39</pre>
             <h4>Status</h4>
             <pre class="response status">404 Not Found</pre>
               <h4>Body</h4>
-              <pre class="response body">[binary data]</pre>
+              <pre class="response body">{
+  &quot;error&quot;: &quot;Task with id &#39;x&#39; not found.&quot;
+}</pre>
       </div>
     </div>
   </body>

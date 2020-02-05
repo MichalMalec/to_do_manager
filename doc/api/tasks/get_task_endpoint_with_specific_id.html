@@ -123,7 +123,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /v1/projects/126/tasks/23</pre>
+          <pre class="request route highlight">GET /v1/projects/1627/tasks/589</pre>
 
 
 
@@ -137,15 +137,22 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ffdfea1f8e01ab93d6a92b272c5d92e8&quot;
+ETag: W/&quot;ba17dd338e484823f48b7c0ef68a9a3d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5570ec61-f930-4a74-a4bf-bc4c773d33dd
-X-Runtime: 0.010509
-Content-Length: 66</pre>
+X-Request-Id: cd3c9c6c-d076-417e-bcb1-7864a4879745
+X-Runtime: 0.041312
+Content-Length: 67</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[binary data]</pre>
+              <pre class="response body">{
+  &quot;task&quot;: {
+    &quot;id&quot;: 589,
+    &quot;name&quot;: &quot;TEST task&quot;,
+    &quot;priority&quot;: 1,
+    &quot;is_done&quot;: false
+  }
+}</pre>
       </div>
     </div>
   </body>

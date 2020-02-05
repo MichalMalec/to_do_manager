@@ -18,7 +18,7 @@ module V1
         render json: { message: 'User was succesfully removed' }
       else
         render json: {
-          error: "User with id #{params[:id]} not found."
+          error: "User with id \'#{params[:id]}\' not found."
         }, status: :not_found
       end
     end
