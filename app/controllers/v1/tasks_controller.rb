@@ -49,7 +49,7 @@ class V1::TasksController < ApplicationController
   def ensure_existing_project
     if current_user.projects.where(id: params[:project_id]).first.nil?
       render json: {
-        error: "Project with id #{params[:project_id]} not found."
+        error: "Project with id \'#{params[:project_id]}\' not found."
       }, status: :not_found
     end
   end
