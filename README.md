@@ -66,7 +66,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - see all user's projects
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -74,7 +74,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - see specific project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -82,7 +82,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - create new project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -97,7 +97,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - modify existing project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -112,7 +112,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - remove existing project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -120,7 +120,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - see tasks in scope of project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -128,7 +128,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - see task in scope of project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -136,7 +136,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - create task in scope of project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -153,7 +153,7 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - modify task in scope of project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
 
@@ -170,6 +170,6 @@ https://thawing-coast-88544.herokuapp.com/
   **When to use?**
   - remove task in scope of project
 
-  **Headers**
+  **Headers:**
   - X-User-Token, {authentication_token}
   - X-User-Email, {email}
